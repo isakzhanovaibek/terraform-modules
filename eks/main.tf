@@ -111,7 +111,7 @@ resource "aws_eks_node_group" "nodes_general" {
 
   force_update_version = false
 
-  instance_types = ["t2.small"]
+  instance_types = ["t2.micro"]
 
   labels = {
     role = "nodes-general"
