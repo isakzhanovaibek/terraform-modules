@@ -28,7 +28,7 @@ resource "aws_eks_cluster" "eks" {
 
   role_arn = aws_iam_role.eks_cluster.arn
 
-  version = "1.25"
+  version = "1.24"
 
   vpc_config {
     endpoint_private_access = false
@@ -119,7 +119,7 @@ resource "aws_eks_node_group" "nodes_general" {
     role = "nodes-general"
   }
 
-  version = "1.25"
+  version = "1.24"
 
   depends_on = [
     aws_iam_role_policy_attachment.amazon_eks_worker_node_policy_general,
