@@ -28,7 +28,7 @@ resource "aws_eks_cluster" "eks" {
 
   role_arn = aws_iam_role.eks_cluster.arn
 
-  version = "1.24"
+  version = "1.23"
 
   vpc_config {
     endpoint_private_access = false
@@ -107,7 +107,7 @@ resource "aws_eks_node_group" "nodes_general" {
 
   ami_type = "AL2_x86_64"
 
-  capacity_type = "SPOT"
+  capacity_type = "ON_DEMAND"
 
   disk_size = 20
 
@@ -119,7 +119,7 @@ resource "aws_eks_node_group" "nodes_general" {
     role = "nodes-general"
   }
 
-  version = "1.24"
+  version = "1.23"
 
   depends_on = [
     aws_iam_role_policy_attachment.amazon_eks_worker_node_policy_general,
